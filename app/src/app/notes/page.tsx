@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styles from './Notes.module.css';
-import CreateNote from './CreateNote';
 import { getNotes } from "@/server/notes"
 
 // export const dynamic = 'auto',
@@ -24,7 +23,7 @@ export default async function NotesPage() {
         })}
       </div>
 
-      <CreateNote />
+      <Link href="/create/note/">Create note!</Link>
     </div>
   );
 }

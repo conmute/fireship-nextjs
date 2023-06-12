@@ -7,7 +7,10 @@ export default function HomePage () {
     <div>
       <h1>Home Page</h1>
       <p>Home content</p>
+      <hr />
       <Link href="/create/note/">Create note!</Link>
+      <hr />
+      <Link href="/example/sad/">Sad examample</Link>
     </div>
   )
 }

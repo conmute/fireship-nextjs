@@ -25,7 +25,7 @@ export default function RootLayout ( {
           {children}
           <hr />
           Sidebar: {sidebar}
-          <br />
+          <hr />
           Modal:
           {modal}
         </main>
