@@ -1,14 +1,36 @@
 import Link from 'next/link';
 import styles from './Notes.module.css';
 import { getNotes } from "@/server/notes"
+import { Metadata } from 'next';
 
-// export const dynamic = 'auto',
-//   dynamicParams = true,
-//   revalidate = 0,
-//   fetchCache = 'auto',
-//   runtime = 'nodejs',
-//   preferredRegion = 'auto'
+export const dynamic = 'auto';
+// 'auto' | 'force-dynamic' | 'error' | 'force-static'
+// force-static for SSG
+// force-dynamic for SSR with lots of updates
 
+export const dynamicParams = true;
+// boolean
+
+export const revalidate = 0;
+// false | 'force-cache' | 0 | number
+// for ISR from `/pages`
+
+export const fetchCache = 'auto';
+// 'auto' | 'default-cache' | 'only-cache'
+// 'force-cache' | 'force-no-store' | 'default-no-store' | 'only-no-store'
+
+export const runtime = 'nodejs';
+// 'edge' | 'nodejs'
+
+export const preferredRegion = 'auto';
+// 'auto' | 'global' | 'home' | string | string[]
+
+// or async generateMetadata
+export const metadata: Metadata = {
+  title: "title",
+}
+
+// server components allows to have async for datafetching
 export default async function NotesPage() {
   const notes = await getNotes();
 
